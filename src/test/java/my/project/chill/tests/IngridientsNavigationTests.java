@@ -1,5 +1,6 @@
 package my.project.chill.tests;
 
+import io.qameta.allure.junit4.DisplayName;
 import my.project.chill.utils.Browser;
 import org.junit.After;
 import org.junit.Before;
@@ -30,6 +31,7 @@ public class IngridientsNavigationTests {
     }
 
     @Test
+    @DisplayName("Проверка видимости секции булок")
     public void bunsTabShouldShowBunsSection() {
         constructorPage.clickSauces();
         constructorPage.clickBuns();
@@ -37,12 +39,14 @@ public class IngridientsNavigationTests {
     }
 
     @Test
+    @DisplayName("Проверка видимости секции соусов")
     public void saucesTabShouldShowSaucesSection() {
         constructorPage.clickSauces();
         constructorPage.isSaucesSectionVisible();
     }
 
     @Test
+    @DisplayName("Проверка видимости секции начинок")
     public void fillingsTabShouldShowFillingsSection() {
         constructorPage.clickFilling();
         constructorPage.isFillingsSectionVisible();

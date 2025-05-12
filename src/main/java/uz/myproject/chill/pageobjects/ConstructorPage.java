@@ -54,18 +54,18 @@ public class ConstructorPage {
     }
 
     @Step("Проверка перемещения к секции булок")
-    public void isBunsSectionVisible() {
-        bunsSectionHeader.isDisplayed();
+    public boolean isBunsSectionVisible() {
+        return buns.getAttribute("class").contains("tab_tab_type_current");
     }
 
     @Step("Проверка перемещения к секции соусов")
-    public void isSaucesSectionVisible() {
-        saucesSectionHeader.isDisplayed();
+    public boolean isSaucesSectionVisible() {
+        return sauces.getAttribute("class").contains("tab_tab_type_current");
     }
 
     @Step("Проверка перемещения к секции начинок")
-    public void isFillingsSectionVisible() {
-        fillingsSectionHeader.isDisplayed();
+    public boolean isFillingsSectionVisible() {
+        return fillings.getAttribute("class").contains("tab_tab_type_current");
     }
 
     @Step("Проверка нахождения на странице Конструктор")

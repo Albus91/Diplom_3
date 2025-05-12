@@ -1,5 +1,6 @@
 package my.project.chill.tests;
 
+import io.qameta.allure.junit4.DisplayName;
 import my.project.chill.api.UserClient;
 import my.project.chill.utils.Browser;
 import my.project.chill.utils.ConfigReader;
@@ -58,6 +59,7 @@ public class NavigationTests {
     }
 
     @Test
+    @DisplayName("Переход к странице личного кабинета со страницы конструктора")
     public void navigateToAccountPageFromConstructorPage() {
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         header.clickProfile();
@@ -65,6 +67,7 @@ public class NavigationTests {
     }
 
     @Test
+    @DisplayName("Переход к странице конструктора из личного кабинета по клику на конструктор")
     public void navigateToConstructorPageFromAccountPageByConstructorLink() {
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         header.clickProfile();
@@ -73,6 +76,7 @@ public class NavigationTests {
     }
 
     @Test
+    @DisplayName("Переход к странице конструктора из личного кабинета по клику на лого")
     public void navigateToConstructorPageFromAccountPageByLogo() {
         driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         header.clickProfile();

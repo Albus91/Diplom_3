@@ -1,5 +1,6 @@
 package my.project.chill.tests;
 
+import io.qameta.allure.junit4.DisplayName;
 import my.project.chill.api.UserClient;
 import my.project.chill.utils.Browser;
 import my.project.chill.utils.ConfigReader;
@@ -50,6 +51,7 @@ public class RegistrationTests {
     }
 
     @Test
+    @DisplayName("Успешная регистрация")
     public void testSuccessfulRegistration() {
         registrationPage.register(name, email, password);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -60,6 +62,7 @@ public class RegistrationTests {
     }
 
     @Test
+    @DisplayName("Неуспешная регистрация из-за короткого пароля")
     public void testUnSuccessfulRegistration() {
         registrationPage.register(name, email, shortPassword);
         registrationPage.getPasswordErrorMessage();

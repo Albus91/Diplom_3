@@ -1,5 +1,6 @@
 package my.project.chill.tests;
 
+import io.qameta.allure.junit4.DisplayName;
 import my.project.chill.api.UserClient;
 import my.project.chill.utils.Browser;
 import my.project.chill.utils.ConfigReader;
@@ -57,6 +58,7 @@ public class AuthTest {
     }
 
     @Test
+    @DisplayName("Логин на странице конструктора")
     public void loginViaMainLoginButton() {
         driver.get(CONSTRUCTOR_URL);
         constructorPage.clickLogin();
@@ -66,6 +68,7 @@ public class AuthTest {
     }
 
     @Test
+    @DisplayName("Логин на странице личного кабинета")
     public void loginViaAccountPageButton() {
         driver.get(CONSTRUCTOR_URL);
         header.clickProfile();
@@ -75,6 +78,7 @@ public class AuthTest {
     }
 
     @Test
+    @DisplayName("Логин на странице регистрации")
     public void loginViaRegistrationFormLink() {
         driver.get(REGISTER_URL);
         registrationPage.clickLoginLink();
@@ -84,6 +88,7 @@ public class AuthTest {
     }
 
     @Test
+    @DisplayName("Логин на странице забытого пароля")
     public void loginViaRecoveryFormLink() {
         driver.get(FORGOT_PASS_URL);
         recoveryPage.clickLoginLink();
@@ -93,6 +98,7 @@ public class AuthTest {
     }
 
     @Test
+    @DisplayName("Логаут")
     public void testLogout() {
         driver.get(LOGIN_PAGE_URL);
         loginPage.login(email, password);
